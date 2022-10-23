@@ -1,0 +1,84 @@
+/*Bruce Dong: This is the date class that allows user to set up the initial  date 
+ * It also operate upon increment dates */
+
+public class Date{
+  // This is the field to store the day
+  private int day;
+  
+  // This is the field to store the month
+  private int month;
+  
+  
+  // This is the constructor
+  public Date (int day, int month){
+    this.day = day;
+    this.month = month;
+  }
+  
+  // This method returns the day of the account 
+  public int getDay(){
+      return day;
+  }
+  
+  // This method returns the day of the account   
+  public int getMonth(){
+      return month;
+  }
+  
+  // This is the increment method that should run everyday and accumulate how date changes
+  public void incrementDay(){
+    if ( month == 12 && day == 31){
+      day =1;
+      month =1;
+      return;
+    }
+    if( month ==2){
+      if(day == 27){
+        day =1;
+        month =3;
+        return;
+      }
+      else{
+        this.day=day+1;
+        return;
+      }
+    }
+    if( month ==4 || month ==6 || month ==9 || month ==11){
+      if(day == 30){
+        day =1;
+        this.month =month+1;
+        return;
+      }
+      else{
+        day=day+1;
+        return;
+      }
+    }
+    else{
+      if(day == 31){
+        day =1;
+        this.month =month+1;
+        return;
+      }
+      else{
+        day=day+1;
+        return;
+      }
+    }
+  }
+  
+  // This is the override method of equals to determine if two dates are the same or not
+  public boolean equals (Object o) {
+    if ( o instanceof Date ){
+      Date e = (Date) o;
+      return( this.getDay() == (e.getDay() ) && this.getMonth() == (e.getMonth() ) );
+    }
+    else 
+      return false;
+  }
+  
+  // This is the override method of toString to show the date of Date class
+  public String toString() {
+    return "Day: "+getDay() + " Month: " + getMonth();
+  }
+}

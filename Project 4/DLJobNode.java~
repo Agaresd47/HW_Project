@@ -1,0 +1,7 @@
+/** Basic component of a double linked job node
+ *
+ * @author Bruce Dong
+ */
+public class DLJobNode<T> extends DLNode{
+  
+}

@@ -1,0 +1,198 @@
+/* Bruce Dong: This is a class that set up personal bank accounts and allows user to
+ * make any change to the account and also do common bank operator */
+public class BankAccount extends Object{
+  // This is a private field to store the interest rate
+  private double interestRate;
+  
+  // This is a private field to store the the minimum  balance of the account
+  private int minBalance;
+  
+  // This is a private field to store the overdraft fee
+  private double overdraftFee;
+  
+  // This is a private field to store the ATM fee
+  private double atmFee;
+  
+  // This is a private field to store the bounced check fee
+  private double bouncedCheckFee;
+  
+  // This is an instance field that stores the balance of the account owner
+  private double balance=0;
+  
+  // This is an instance field that stores the withdraw fee of the account owner
+  private double withdrawFee;
+  
+  // This is an instance field that stores the withdraw limits of the account owner
+  private int withdrawLimit=-1;
+  
+  // This is an instance field that stores how many times the user tries to withdraw from the ATM
+  private int withdrawCount=0;
+  
+  // This is an instance field that stores the interest earned so far
+  private double interestEarned =0;
+  
+  // This ia an instance field that stores whether the overdraft fee has been charged this month.
+  private boolean overdraftFlag = false;
+  
+  // This is the generic constructor for default values
+  public BankAccount(){
+    this(0.0, 0, 0.0 , 0.0, 0.0);
+  }
+  
+  // This is the actuall constructor
+  public BankAccount (double interestRate, int minBalance, double overdraftFee, double atmFee, double bouncedCheckFee){
+    this.minBalance=minBalance;
+    this.overdraftFee=overdraftFee;
+    this.atmFee=atmFee;
+    this.bouncedCheckFee=bouncedCheckFee;
+    this.interestRate=interestRate;
+  }
+  
+  // This is the method that stores how much money the owner despoit into the acocunt
+  // non-field variable deposit means the deposit amount 
+  public void deposit(double deposit){
+    this.balance = balance+deposit;
+  }
+  
+  // This method allows users to check his balance
+  public double getBalance(){
+    return balance;
+  }
+  
+  // This method allows user to set the account's interest rate
+  public void setInterestRate( double interestRate){
+    this.interestRate = interestRate;
+  }
+
+   // This method allows user to check the account's interest rate
+  public double getInterestRate(){
+    return interestRate;
+  }
+  
+  //This method allows user to set the account's minimum balance 
+  // non-field variable minimumBalanceA means the intended minimum balance
+  public void setMinimumBalance( int minimumBalanceA){
+    this.minBalance = minimumBalanceA;
+  }
+
+   // This method allows user to check the account's minimum balance
+  public double getMinimumBalance(){
+    return minBalance;
+  }
+  
+  // This method allows user to set the ATM fee
+  // non-field variable atmFeeA means the intended ATM fee
+  public void setATMFee( double atmFeeA){
+    this.atmFee = atmFeeA;
+  }
+
+   // This method allows user to check the ATM fee
+  public double getATMFee(){
+    return atmFee;
+  }
+  
+  // This method allows user to set the overdraft fee
+  // non-field variable overdraftFeeA means the intended overdraft fee
+  public void setOverdraftFee( double overdraftFeeA){
+    this.overdraftFee = overdraftFeeA;
+  }
+
+   // This method allows user to check the overdraft fee
+  public double getOverdraftFee(){
+    return overdraftFee;
+  }
+  
+  // This method allows user to set the bounced check fee
+  // non-field variable bouncedCheckFeeA means the intended bounced check fee
+  public void setBouncedCheckFee( double bouncedCheckFeeA){
+    this.bouncedCheckFee = bouncedCheckFeeA;
+  }
+
+   // This method allows user to check the bounced check fee
+  public double getBouncedCheckFee(){
+    return bouncedCheckFee;
+  }
+  
+  // This method allows user to set the withdraw fee 
+  // non-field variable withdrawFeeA means the intended withdraw fee
+  public void setWithdrawFee( double withdrawFeeA){
+    this.withdrawFee = withdrawFeeA;
+  }
+
+   // This method allows user to check the withdraw fee 
+  public double getWithdrawFee(){
+    return withdrawFee;
+  }
+  
+  // This method allows user to set the account's withdraw limit, and if you want unlimited times of withdraw, type 0
+  //  non-field variable withdrawLimitA means the intended withdraw limit
+  public void setWithdrawLimit( int withdrawLimitA){
+    this.withdrawLimit = withdrawLimitA;
+  }
+
+   // This method allows user to check the account's withdraw limit
+  public int getWithdrawLimit(){
+    return withdrawLimit;
+  }
+  
+  // This method allows user to try to withdraw money from the bank and the bank will react upon balance situation
+  // non-field variable amount means the amount of money that user wants to withdraw
+  public boolean withdraw(double amount){
+    if ( amount > balance )
+      return false;
+    else{
+      this.balance= balance - amount;
+      this.withdrawCount = withdrawCount + 1;
+      if(withdrawCount > withdrawLimit && withdrawLimit != 0)
+        this.balance = balance - withdrawFee;
+      return true;
+    }
+  }
+  
+  // This method allows user to use withdraw draft and the bank will react upon balance situation
+  // non-field variable amount means the amount of money that user wants to withdraw
+  public boolean withdrawDraft (double amount){
+    if ( amount > balance ){
+      this.balance = balance - bouncedCheckFee;
+      return false;
+    }
+    else{
+      this.balance= balance - amount;
+      this.withdrawCount = withdrawCount + 1;
+      if(withdrawCount > withdrawLimit && withdrawLimit != 0)
+        this.balance = balance - withdrawFee;
+      return true;
+    }
+  }
+  
+  // This method allows user to use withdraw from ATM and the ATM will react upon balance situation
+  // non-field variable amount means the amount of money that user wants to withdraw
+  public boolean withdrawATM ( double amount){   
+    if ( amount +atmFee > balance)
+      return false;
+    else
+      withdraw( (amount+ atmFee) ); 
+      return true;
+  }
+  
+  // This is the method that should runs everyday, and it will the overdraft fee and calculus the interest earned so far
+  public void  incrementDay(){
+    if ( balance < minBalance && overdraftFlag == false){
+      this.balance = balance - overdraftFee;
+      this.overdraftFlag= true;
+    }
+    if ( balance < minBalance && overdraftFlag == true){ 
+    // nothing happens, and no interest earned
+    }
+    if (balance > minBalance){
+      interestEarned = interestEarned + (double) ((interestEarned + balance) * interestRate/365.0);
+    }
+  }
+  
+  // This method should run monthly and add the interested earned to balance, and reset interest earned so far and over draft charging situation
+  public void incrementMonth(){
+    this.balance = balance + interestEarned;
+    this.interestEarned = 0;
+    this.overdraftFlag = false;
+  }
+}

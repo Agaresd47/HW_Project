@@ -1,0 +1,214 @@
+/* Bruce Dong: This is a class that set up account and allows user to
+ * creat serval accounts and make change to each ont of them and also do common bank operator */
+public class Account extends Object{
+  // This is a private field to store the first name
+  private String firstName;
+  
+  // This is a private field to store the last name
+  private String lastName;
+  
+  // This is a private field to store the street address
+  private String streetAddress;
+  
+  // This is a private field to store the zip code
+  private String zipCode;
+  
+  // This is a private field to store the date
+  private Date date;
+  
+  // This is a private field to store the account's saving account
+  private BankAccount saveAccount;
+  
+   // This is a private field to store the account's checking account
+  private BankAccount checkAccount;
+  
+   // This is a private field to store the account's money market account
+  private BankAccount moneyMarketAccount;
+  
+   // This is a private field to store the account's credit card account
+  private CreditCardAccount creditCardAccount;
+  
+  // This is the actuall constructor
+  public Account (String firstName, String lastName, String streetAddress, String zipCode, Date date){
+    this.firstName=firstName;
+    this.lastName=lastName;
+    this.streetAddress=streetAddress;
+    this.zipCode=zipCode;
+    this.date=date;
+  }
+  
+  // This method allows user to set the account's first name
+  public void setFirstName( String firstName){
+    this.firstName = firstName;
+  }
+
+   // This method allows user to check the account's first name
+  public String getFirstName(){
+    return firstName;
+  }
+  
+  // This method allows user to set the account's last name
+  public void setLastName( String lastName){
+    this.lastName = lastName;
+  }
+
+   // This method allows user to check the account's last name
+  public String getLastName(){
+    return lastName;
+  }
+  
+  // This method allows user to set the account's street address
+  public void setStreetAddress( String streetAddress){
+    this.streetAddress = streetAddress;
+  }
+
+   // This method allows user to check the account's street address
+  public String getStreetAddress(){
+    return streetAddress;
+  }
+  
+  // This method allows user to set the account's zip code
+  public void setZipCode( String zipCode){
+    this.zipCode = zipCode;
+  }
+
+   // This method allows user to check the account's zip code
+  public String getZipCode(){
+    return zipCode;
+  }
+  
+  // This method allows user to set the account's date
+  public void setDate( Date date){
+    this.date = date;
+  }
+
+   // This method allows user to check the account's date
+  public Date getDate(){
+    return date;
+  }
+  
+  // This method allows user to set the account's saving account
+  public void setSavingsAccount( BankAccount saveAccount){
+    this.saveAccount = saveAccount;
+  }
+
+   // This method allows user to check the account's saving account
+  public BankAccount getSavingsAccount(){
+    return saveAccount;
+  }
+  
+   // This method allows user to set the account's checking account
+  public void setCheckingAccount( BankAccount checkAccount){
+    this.checkAccount = checkAccount;
+  }
+
+   // This method allows user to check the account's checking account
+  public BankAccount getCheckingAccount(){
+    return checkAccount;
+  }
+  
+   // This method allows user to set the account's money market account
+  public void setMoneyMarketAccount( BankAccount moneyMarketAccount){
+    this.moneyMarketAccount = moneyMarketAccount;
+  }
+
+   // This method allows user to check the account's money market account
+  public BankAccount getMoneyMarketAccount(){
+    return moneyMarketAccount;
+  }
+  
+   // This method allows user to set the account's credit card account
+  public void setCreditCardAccount( CreditCardAccount creditCardAccount){
+    this.creditCardAccount = creditCardAccount;
+  }
+
+   // This method allows user to check the account's credit card account
+  public CreditCardAccount getCreditCardAccount(){
+    return creditCardAccount;
+  }
+  
+  // This is the method that should runs daily to operate each account's increment day
+  public void incrementDay(){
+    // This non-feild variable stores the old date
+    Date oldDate = date;
+    //1
+    date.incrementDay();
+    //2 
+    if(this.saveAccount!=null)
+      saveAccount.incrementDay();
+    
+    if(this.checkAccount!=null)
+      checkAccount.incrementDay();
+    
+    if(this.moneyMarketAccount!=null)
+      moneyMarketAccount.incrementDay();
+    
+    if(this.creditCardAccount!=null)
+      creditCardAccount.incrementDay();
+    //3
+    if( oldDate.getMonth() != date.getMonth()){
+      
+      if(this.saveAccount!=null)
+        saveAccount.incrementMonth();
+      
+      if(this.checkAccount!=null)
+        checkAccount.incrementMonth();
+      
+      if(this.moneyMarketAccount!=null)
+        moneyMarketAccount.incrementMonth();
+      
+      if(this.creditCardAccount!=null)
+        creditCardAccount.incrementMonth();
+    }
+  }
+  
+  // This is the override method of equals to help user to determine whether the two accounts are the same
+  public boolean equals (Object o){
+    if ( o instanceof Account ){
+      Account e = (Account) o;
+      return( this.getFirstName().equals (e.getFirstName() ) && this.getLastName().equals (e.getLastName() ) && this.getStreetAddress().equals (e.getStreetAddress() ) && this.getZipCode().equals (e.getZipCode() ) );
+    }
+    else 
+      return false;
+  }
+  
+  // This is the override method of toString to present the information of the account
+  public String toString (){
+    // nameA is the non-field variable that stores the whole name of the account
+    String nameA = this.getFirstName() + " "+ this.getLastName();
+    
+    // addressA is the non-field variable that stores the address information of the account
+    String addressA = this.getStreetAddress() + " " + this.getZipCode()+".";
+    
+    // basicA is the non-field variable that stores all the basic information
+    String basicA = nameA + " " + addressA ;
+    
+    // saveA stores the information of the saving account
+    String saveA = new String ();
+    if( this.saveAccount!=null )
+      saveA = "Savings: " + (double)Math.round(saveAccount.getBalance());
+    
+    // checkA stores the information of the checking account
+    String checkA = new String ();
+    if( this.checkAccount!=null )
+      checkA = "Checkings: " +(double)Math.round( checkAccount.getBalance());
+    
+    // moneyMarketA stores the information of the money market account
+    String moneyMarketA = new String ();
+    if( this.moneyMarketAccount!=null)
+      moneyMarketA = "Money Markets: " + (double)Math.round(moneyMarketAccount.getBalance());
+    
+    // creditA stores the information of the credit card account
+    String creditA = new String ();
+    if( this.creditCardAccount!=null)
+      creditA = "Credit Card: " + (double)Math.round(creditCardAccount.getBalance());
+    
+    // account A stores all information of this account's different account's information
+    String accountA = saveA +" " + checkA + " " +moneyMarketA+ " " +creditA; 
+  
+    // everything is the non-field variable that stores all of the information above
+    String everything = basicA + " " + accountA;
+
+  return everything;
+  }
+}

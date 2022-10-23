@@ -1,0 +1,34 @@
+import javafx.scene.control.Button;
+
+/** Rules for how we want the chess board to display
+ *
+ * @author Harold Connamacher
+ * @author Bruce Dong
+ */
+public interface JavaFXChessBoardDisplay {
+  /**
+   * Display the empty square on the board
+   * @param button the wanted button
+   * @param row the given row
+   * @param column the given column
+   */
+  public void displayEmptySquare(Button button, int row, int column);
+
+  /**
+   * Display the given piece on the board
+   * @param button the wanted button
+   * @param row the given row
+   * @param column the given column
+   * @param piece the given piece
+   */
+  public void displayFilledSquare(Button button, int row, int column, ChessPiece piece);
+
+  /**
+   * Highlight the given square on the board
+   * @param button the wanted button
+   * @param row the given row
+   * @param column the given column
+   * @param piece the given piece
+   */
+  public void  highlightSquare(boolean highlight, Button button, int row, int column, ChessPiece piece);
+}
