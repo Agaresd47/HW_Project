@@ -1,1 +1,1 @@
-# HW_Project
+# Homework for project attitude demosntration.
