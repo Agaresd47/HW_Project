@@ -1,0 +1,180 @@
+{
+  "basics": {
+    "name": "Zifei Dong",
+    "title": "AI Product / Conversational AI Research | Dialogue Evaluation, Companion UX, Multi-Model Strategy",
+    "summaries": [
+      "I am looking for 2026 roles in conversational AI product, AI companion design, model evaluation, and applied research for user-facing LLM systems.",
+      "My recent work focuses on turning long-horizon Chinese dialogue experience into benchmark cases, product hypotheses, and structured evaluation workflows for emotional support, clarification, continuity, and everyday assistant behavior."
+    ],
+    "profileImage": "/profile.jpg",
+    "resumeUrl": "/Zifei_Dong_Resume.pdf",
+    "metaDescription": "Zifei Dong builds Chinese dialogue evaluation, companion assistant strategy, and multi-model behavior research for user-facing AI products."
+  },
+  "about": {
+    "paragraphs": [
+      "I am especially interested in AI systems that people talk to repeatedly rather than use once. That means focusing less on generic benchmark scores and more on how models actually behave across turns: whether they recognize implicit user signals, hold the right conversational stance, maintain continuity, and know when to support, challenge, or step back.",
+      "What I contribute is a product-facing research workflow. I distill long-term real usage into high-signal cases, organize them into buckets, define rubrics and error taxonomy, and compare model behavior in ways that are useful for assistant design, evaluation, and strategy. I care most about Chinese-language interaction quality in companion-like and everyday-life scenarios."
+    ]
+  },
+  "experience": [
+    {
+      "company": "Independent Research Project, Remote",
+      "position": "Chinese Dialogue Benchmark and Companion Assistant Strategy",
+      "period": "Dec 2025 - Present",
+      "responsibilities": [
+        "Designed a Chinese dialogue behavior benchmark from long-horizon real conversation samples, centered on implicit user-signal recognition, emotional support, clarification, and relationship continuity.",
+        "Distilled 16 representative cases with paired rubrics across 4 user-state buckets, covering confirmation-seeking, low-salience emotion, challenge and calibration needs, and other high-value Chinese dialogue patterns.",
+        "Built a semi-automated workflow that turns private conversation logs into patterns, error taxonomy, benchmark cases, rubrics, and strategy hypotheses suitable for public showcase and hiring conversations.",
+        "Compared GPT, Claude, and Gemini on Chinese emotional-support and clarification scenarios, then summarized recurring failure modes around stance selection, continuity, premature closure, and challenge timing."
+      ]
+    },
+    {
+      "company": "Independent Research Project, Remote",
+      "position": "Chinese Everyday Assistant Behavior Study",
+      "period": "Jan 2026 - Present",
+      "responsibilities": [
+        "Studied assistant behavior in long-term Chinese everyday-use scenarios including purchase decisions, product reviews, cooking, life planning, and AI workflow support.",
+        "Tracked systematic differences across GPT, Claude, and Gemini in demand understanding, search behavior, response style, and closure strategy, with attention to trust and task-completion experience.",
+        "Converted repeated interaction observations into structured evaluation dimensions and product insights for everyday decision assistants, model assessment, and interaction-strategy optimization."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Chinese Dialogue Benchmark Showcase",
+      "image": null,
+      "color": "from-orange-500 to-rose-600",
+      "duration": "Dec 2025 - Present",
+      "title": "Behavior Benchmark for Chinese Emotional Support and Companion-Like Dialogue",
+      "description": "A public-facing benchmark showcase distilled from long-horizon real dialogue, built to evaluate how Chinese-language models handle implicit needs, continuity, emotional support, and calibration.",
+      "features": [
+        "Built a benchmark with 16 formal cases, 4 user-state buckets, and 48 baseline results across GPT, Claude, and Gemini",
+        "Created a semi-automated distillation workflow from private dialogue logs to patterns, case packs, rubrics, taxonomy, and strategy hypotheses",
+        "Turned the research into a static public showcase with core cases, reports, and model-by-model evidence for hiring and product discussion"
+      ],
+      "technologies": [
+        "LLM Evaluation",
+        "Dialogue UX",
+        "Rubric Design",
+        "Taxonomy",
+        "Benchmarking"
+      ],
+      "link": "https://agaresd47.github.io/text-dialogue-benchmark-showcase/",
+      "linkLabel": "Live Showcase",
+      "github": "https://github.com/Agaresd47/text-dialogue-benchmark-showcase",
+      "githubLabel": "Repository",
+      "documentation": "https://github.com/Agaresd47/text-dialogue-benchmark-showcase/blob/main/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A.md",
+      "documentationLabel": "Project Report"
+    },
+    {
+      "name": "Everyday Assistant Behavior Study",
+      "image": null,
+      "color": "from-sky-500 to-cyan-600",
+      "duration": "Jan 2026 - Present",
+      "title": "Multi-Model Study of Chinese Everyday Assistant Behavior",
+      "description": "An ongoing product research project on how different frontier models behave in Chinese everyday-use settings where trust, pacing, and closure matter as much as correctness.",
+      "features": [
+        "Compared model behavior across consumer decisions, product evaluation, cooking, life planning, and AI workflow tasks drawn from repeated real use",
+        "Analyzed systematic differences in intent reading, search invocation, tone, closure strategy, and how each pattern affects trust and task-completion feel",
+        "Converted repeated qualitative observations into reusable evaluation dimensions and product guidance for everyday assistants"
+      ],
+      "technologies": [
+        "Product Research",
+        "Conversational AI",
+        "Search Behavior",
+        "Tool Use",
+        "Model Comparison"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Dialogue Product Research",
+      "items": [
+        "Conversation Evaluation",
+        "Rubric Design",
+        "Error Taxonomy",
+        "Case Distillation",
+        "Multi-Model Analysis",
+        "Interaction Strategy"
+      ]
+    },
+    {
+      "category": "Applied AI Toolkit",
+      "items": [
+        "Python",
+        "Prompting",
+        "Structured Annotation",
+        "Search Workflows",
+        "Experiment Design",
+        "Insight Synthesis"
+      ]
+    },
+    {
+      "category": "Product Focus Areas",
+      "items": [
+        "AI Companion UX",
+        "Chinese Dialogue Quality",
+        "Emotional Support",
+        "Clarification",
+        "Continuity",
+        "Everyday Assistants"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. in Data Science",
+      "institution": "Vanderbilt University",
+      "period": "Aug 2024 - May 2026 (Expected)",
+      "description": "GPA 3.8/4.0"
+    },
+    {
+      "degree": "B.S. in Computer Science and Statistics",
+      "institution": "UNC-Chapel Hill",
+      "period": "May 2021 - May 2024",
+      "description": "GPA 3.625/4.0, graduated with distinction"
+    }
+  ],
+  "contact": {
+    "email": "zifei.dong@vanderbilt.edu",
+    "resume": "/Zifei_Dong_Resume.pdf",
+    "socialLinks": {
+      "github": "https://github.com/Agaresd47",
+      "linkedin": "https://www.linkedin.com/in/bruce-zdong/"
+    }
+  },
+  "navigation": [
+    {
+      "name": "Profile",
+      "href": "#about"
+    },
+    {
+      "name": "Projects",
+      "href": "#projects"
+    },
+    {
+      "name": "Research",
+      "href": "#experience"
+    },
+    {
+      "name": "Toolkit",
+      "href": "#skills"
+    },
+    {
+      "name": "Education",
+      "href": "#education"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "footer": {
+    "copyright": "Copyright {year} Zifei Dong."
+  },
+  "siteConfig": {
+    "accentColor": "blue",
+    "darkModeDefault": false
+  }
+}

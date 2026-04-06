@@ -1,0 +1,14 @@
+import type { NextConfig } from "next";
+
+const repoName = "HW_Project";
+
+const nextConfig: NextConfig = {
+  output: "export",
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
+  images: {
+    unoptimized: true,
+  },
+};
+
+export default nextConfig;

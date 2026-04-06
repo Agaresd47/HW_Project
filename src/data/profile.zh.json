@@ -1,0 +1,180 @@
+{
+  "basics": {
+    "name": "董自飞",
+    "title": "AI 产品 / 对话式 AI 研究 | 中文对话评测、陪伴体验、多模型策略",
+    "summaries": [
+      "我在寻找 2026 年的 AI 产品、对话式 AI、AI 陪伴、模型评测与面向用户的大模型应用研究岗位。",
+      "我最近的工作重点，是把长期中文真实对话使用经验整理成 benchmark case、产品假设与结构化评测流程，聚焦情感支持、解惑、关系连续性，以及生活场景助手行为。"
+    ],
+    "profileImage": "/profile.jpg",
+    "resumeUrl": "/董自飞简历.pdf",
+    "metaDescription": "董自飞专注中文对话评测、陪伴型助手策略、多模型行为研究与面向用户的 AI 产品工作。"
+  },
+  "about": {
+    "paragraphs": [
+      "我最感兴趣的，是用户会反复和它对话的 AI 系统，而不是只用一次的工具型模型。所以我更关注的不是泛化 benchmark 分数，而是模型在连续多轮交互里到底怎么表现：能不能识别隐性用户信号，能不能保持合适的回应姿态，能不能维护关系连续性，以及什么时候该支持、什么时候该校准、什么时候该往后退一步。",
+      "我能提供的是一套更偏产品侧的研究工作流。我会把长期真实使用中的高价值片段蒸馏成 case，做 bucket 设计，定义 rubric 和 error taxonomy，再把多模型对比整理成能服务于助手设计、评测和策略讨论的结论。现阶段我最关心的是中文语境下偏陪伴、偏生活化、偏连续关系的交互质量。"
+    ]
+  },
+  "experience": [
+    {
+      "company": "独立研究项目，远程",
+      "position": "中文对话行为评测与陪伴型助手策略研究",
+      "period": "2025 年 12 月 - 至今",
+      "responsibilities": [
+        "基于长周期真实对话样本，设计中文对话行为评测项目，聚焦隐性用户信号识别、情感支持、解惑与关系连续性。",
+        "蒸馏形成 16 条代表性案例及配套 rubric，按 4 类典型用户状态分桶，覆盖求确认、低显性情绪表达、挑战与校准需求等高价值中文对话场景。",
+        "搭建半自动案例蒸馏与评测 workflow，将私有对话样本转化为 pattern、error taxonomy、case、rubric 与策略假设，完成可公开展示的结构化沉淀。",
+        "对比 GPT、Claude、Gemini 在中文情感支持与解惑场景中的默认交互差异，归纳其在意图判断、关系连续性、过早结案与挑战时机上的系统性问题。"
+      ]
+    },
+    {
+      "company": "独立研究项目，远程",
+      "position": "中文生活场景多模型助手行为研究",
+      "period": "2026 年 1 月 - 至今",
+      "responsibilities": [
+        "基于长期真实使用场景，开展中文生活场景助手行为与多模型对比研究，覆盖消费决策、产品测评、做饭、生活规划与 AI workflow 等任务。",
+        "总结 GPT、Claude、Gemini 在需求理解、搜索调用、回复风格与结案策略上的系统性差异，分析其对用户信任感与任务完成体验的影响。",
+        "将交互观察转化为结构化评测维度与产品洞察，用于支持生活决策助手设计、模型评测与策略优化。"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "中文对话评测 Showcase",
+      "image": null,
+      "color": "from-orange-500 to-rose-600",
+      "duration": "2025 年 12 月 - 至今",
+      "title": "面向中文情感支持与陪伴式交互的行为评测项目",
+      "description": "一个从长期真实对话中蒸馏出来的公开 benchmark showcase，用来评估中文模型在隐性需求识别、关系连续性、情感支持与校准场景中的交互表现。",
+      "features": [
+        "构建包含 16 条正式 case、4 类用户状态 bucket、48 条 baseline 结果的公开评测资产",
+        "搭建从私有长对话到 pattern、case pack、rubric、taxonomy 与策略假设的半自动蒸馏流程",
+        "把研究结果整理成可公开托管的静态展示页、项目报告与多模型对比证据，方便招聘与产品讨论"
+      ],
+      "technologies": [
+        "LLM 评测",
+        "对话体验研究",
+        "Rubric 设计",
+        "Error Taxonomy",
+        "Benchmark"
+      ],
+      "link": "https://agaresd47.github.io/text-dialogue-benchmark-showcase/",
+      "linkLabel": "在线展示",
+      "github": "https://github.com/Agaresd47/text-dialogue-benchmark-showcase",
+      "githubLabel": "仓库",
+      "documentation": "https://github.com/Agaresd47/text-dialogue-benchmark-showcase/blob/main/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A.md",
+      "documentationLabel": "项目报告"
+    },
+    {
+      "name": "生活场景助手行为研究",
+      "image": null,
+      "color": "from-sky-500 to-cyan-600",
+      "duration": "2026 年 1 月 - 至今",
+      "title": "中文生活场景下的多模型助手行为研究",
+      "description": "一个持续中的产品研究项目，关注不同前沿模型在中文生活场景中的真实交互表现，重点看信任感、节奏感、搜索调用与结案体验。",
+      "features": [
+        "围绕消费决策、产品测评、做饭、生活规划与 AI workflow 等真实任务，比较多模型默认行为差异",
+        "分析模型在需求理解、搜索调用、语气风格、推进方式与结案策略上的稳定偏向",
+        "把长期交互观察整理成可复用的评测维度和产品策略洞察，用于支持生活型助手设计"
+      ],
+      "technologies": [
+        "产品研究",
+        "对话式 AI",
+        "搜索行为",
+        "工具调用",
+        "模型对比"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "对话产品研究",
+      "items": [
+        "对话评测",
+        "Rubric 设计",
+        "错误分类体系",
+        "案例蒸馏",
+        "多模型分析",
+        "交互策略"
+      ]
+    },
+    {
+      "category": "应用 AI 工具能力",
+      "items": [
+        "Python",
+        "Prompt 设计",
+        "结构化标注",
+        "搜索工作流",
+        "实验设计",
+        "洞察归纳"
+      ]
+    },
+    {
+      "category": "关注的产品方向",
+      "items": [
+        "AI 陪伴体验",
+        "中文对话质量",
+        "情感支持",
+        "解惑与校准",
+        "关系连续性",
+        "生活助手"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "数据科学硕士",
+      "institution": "范德堡大学",
+      "period": "2024 年 8 月 - 2026 年 5 月（预计）",
+      "description": "GPA 3.8/4.0"
+    },
+    {
+      "degree": "计算机科学与统计双学士",
+      "institution": "北卡罗来纳大学教堂山分校",
+      "period": "2021 年 5 月 - 2024 年 5 月",
+      "description": "GPA 3.625/4.0，优秀毕业生"
+    }
+  ],
+  "contact": {
+    "email": "zifei.dong@vanderbilt.edu",
+    "resume": "/董自飞简历.pdf",
+    "socialLinks": {
+      "github": "https://github.com/Agaresd47",
+      "linkedin": "https://www.linkedin.com/in/bruce-zdong/"
+    }
+  },
+  "navigation": [
+    {
+      "name": "简介",
+      "href": "#about"
+    },
+    {
+      "name": "项目",
+      "href": "#projects"
+    },
+    {
+      "name": "研究",
+      "href": "#experience"
+    },
+    {
+      "name": "工具箱",
+      "href": "#skills"
+    },
+    {
+      "name": "教育",
+      "href": "#education"
+    },
+    {
+      "name": "联系",
+      "href": "#contact"
+    }
+  ],
+  "footer": {
+    "copyright": "Copyright {year} 董自飞。"
+  },
+  "siteConfig": {
+    "accentColor": "blue",
+    "darkModeDefault": false
+  }
+}
